@@ -1,5 +1,4 @@
 const { Model, DataTypes } = require('sequelize')
-const Address = require('./Address')
 
 class users extends Model {
     static init(sequelize) {
@@ -11,8 +10,9 @@ class users extends Model {
         })
     }
 
-    static associate() {
-        this.hasMany(Address, { foreignKey: 'user_id', as: 'addresses' })
+    static associate(models) {
+        this.hasMany(models.addresses, { foreignKey: 'user_id', as: 'addresses' })
+        this.belongsToMany(models.techs, { foreignKey: 'user_id', through: 'user_techs', as: 'techs' })
     }
 }
 
