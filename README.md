@@ -1,2 +1,2 @@
 # SequelizeNode
-Aprendendo técnicas de sequelize com o mano da Rocketseat
+Aprendendo técnicas de sequelize avançadas
